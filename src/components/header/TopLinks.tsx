@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TopLinks() {
   return (
-    <nav className="flex-nowrap text-[11px] pt-3 px-5 pr-60 text-[#7b7b7b] whitespace-nowrap font-bold">
+    <nav className="flex-nowrap text-[11px] pt-3 px-5 pr-60 text-[#7b7b7b] whitespace-nowrap font-bold overflow-hidden">
       <ul className="flex gap-[14px] place-content-end">
         <li>
           <Link href="/">Siparişlerim</Link>
