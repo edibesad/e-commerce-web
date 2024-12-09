@@ -1,12 +1,12 @@
-import TopLinks from "./TopLinks";
+import TopLinks from "./components/TopLinks";
 import Link from "next/link";
 
 import HbLineImage from "../images/HBLineImage";
 
-import LocationButton from "./LocationButton";
-import SearchBar from "./SearchBar";
-import AccountButton from "./AccountButton";
-import CartButton from "./CartButton";
+import LocationButton from "./components/LocationButton";
+import SearchBar from "./components/SearchBar";
+import AccountButton from "./components/AccountButton";
+import CartButton from "./components/CartButton";
 import LogoImage from "../images/LogoImage";
 import Categories from "../category_menu/Categories";
 export default function Header() {

@@ -1,4 +1,4 @@
-import CartImage from "../images/CartImage";
+import CartImage from "../../images/CartImage";
 
 export default function CartButton() {
   return (
