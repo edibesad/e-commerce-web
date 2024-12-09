@@ -16,7 +16,10 @@ export default function Categories() {
   return (
     <ul className="flex w-full px-64 bg-[#f5f5f5]">
       {items.map((item) => (
-        <li className="self-center" key={item.key}>
+        <li
+          className="place-content-center p-0 text-[#919191] hover:bg-white  hover:text-[var(--primary)] cursor-pointer"
+          key={item.key}
+        >
           {item}
         </li>
       ))}
