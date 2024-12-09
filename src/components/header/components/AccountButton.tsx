@@ -1,4 +1,4 @@
-import UserImage from "../images/UserImage";
+import UserImage from "../../images/UserImage";
 
 export default function AccountButton() {
   return (

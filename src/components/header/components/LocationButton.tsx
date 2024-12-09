@@ -1,4 +1,4 @@
-import LocationImage from "../images/LocationImage";
+import LocationImage from "../../images/LocationImage";
 
 export default function LocationButton() {
   return (

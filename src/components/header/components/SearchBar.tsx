@@ -1,4 +1,4 @@
-import HBLineImage from "../images/HBLineImage";
+import HBLineImage from "../../images/HBLineImage";
 
 export default function SearchBar() {
   return (
