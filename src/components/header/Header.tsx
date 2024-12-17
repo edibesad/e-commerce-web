@@ -36,7 +36,7 @@ export default function Header() {
           ))}
         </ul>
       </div>
-      <HbLineImage className="w-full" />
+      <HbLineImage className="w-full h-3" />
       <Categories />
     </>
   );
