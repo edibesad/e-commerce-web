@@ -18,25 +18,24 @@ export default function Header() {
   ];
   return (
     <>
+      <div className="xl:container mx-auto">
       <TopLinks />
-      <div className="max-w-screen-xl w-full mx-auto overflow-hidden">
-        <ul className="flex gap-6 px-6 py-5 items-center h-32 flex-shrink-0">
-          <li className="place-content-center flex-shrink-0">
-            <div className="px-4 mr-12">
+        <ul className="flex gap-6 px-6 py-5 overflow-x-hidden justify-center items-center h-32">
+          <li className="">
+            <div className="image">
               <Link href="/">
-                <LogoImage />
+                <LogoImage className="min-w-44"/>
               </Link>
             </div>
           </li>
-          {/* Build other elements */}
           {headerElements.map((element) => (
-            <li key={element.key} className="flex-shrink-0">
+            <li key={element.key} >
               {element}
             </li>
           ))}
         </ul>
       </div>
-      <HbLineImage className="w-full h-3" />
+      <HbLineImage className="w-full min-h-2 object-cover" />
       <Categories />
     </>
   );

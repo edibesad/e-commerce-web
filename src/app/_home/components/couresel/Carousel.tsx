@@ -27,7 +27,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     <>
       <div
         id="default-carousel"
-        className="relative w-2/3 min-w-[750px] min-h-96"
+        className="relative min-w-[750px] min-h-96"
         data-carousel="slide"
       >
         <div className="relative h-96 overflow-hidden rounded-lg">
