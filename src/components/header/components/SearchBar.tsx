@@ -10,7 +10,9 @@ export default function SearchBar() {
         style={{ width: "418px", height: "60px" }}
         className="border border-[var(--primary)] rounded-lg px-4 relative z-1 focus:outline-none"
       />
-      <HBLineImage className="absolute bottom-0 px-1 z-2" />
+      <div className="absolute bottom-0 w-full h-1 z-2">
+        <HBLineImage className="px-1" />
+      </div>
     </div>
   );
 }

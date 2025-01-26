@@ -1,25 +1,25 @@
 "use client";
-import { useState } from "react";
-import CarouselImage from "./Carouselmage";
-import arrowLine from "../../../../public/svgs/arrow_line.svg";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
+import React from "react";
 
-interface CarouselProps {
-  images: string[];
-}
+// interface CarouselProps {
+//   images: string[];
+// }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel= ({ children } : { children: ReactNode }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const childrenArray = React.Children.toArray(children);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? childrenArray.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === childrenArray.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -35,9 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             className="flex transition-transform duration-500 h-96 bg-black"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {images.map((image, index) => (
-              <CarouselImage src={image} key={index} />
-            ))}
+            {children}
           </div>
         </div>
         <div
@@ -51,7 +49,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           hover:scale-110 focus:outline-none"
             data-carousel-prev
           >
-            <Image src={arrowLine} alt=""></Image>
+            <Image src="/svgs/arrowLine.svg" width={1920} height={1920} alt=""></Image>
           </button>
         </div>
         <div
@@ -65,7 +63,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           hover:scale-110 focus:outline-none rotate-180"
             data-carousel-next
           >
-            <Image src={arrowLine} alt=""></Image>
+            <Image src="svgs/arrowLine.svg" alt="" fill />
           </button>
         </div>
       </div>

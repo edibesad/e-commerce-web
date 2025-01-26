@@ -10,32 +10,26 @@ import CartButton from "./components/CartButton";
 import LogoImage from "../images/LogoImage";
 import Categories from "../category_menu/Categories";
 export default function Header() {
-  const headerElements = [
-    <SearchBar key="search-bar" />,
-    <LocationButton key="location-button" />,
-    <AccountButton key="account-button" />,
-    <CartButton key="cart-button" />,
-  ];
+
   return (
     <>
-      <div className="xl:container mx-auto">
-      <TopLinks />
-        <ul className="flex gap-6 px-6 py-5 overflow-x-hidden justify-center items-center h-32">
-          <li className="">
-            <div className="image">
-              <Link href="/">
-                <LogoImage className="min-w-44"/>
+      <div className="xl:container mx-auto ">
+        <TopLinks />
+        <div className="flex gap-6 px-6 py-5 overflow-x-hidden justify-center items-center h-22">
+           <div className="basis-1/6 h-full bg-blue-600 relative">
+              <Link href="/" className="h-full w-full">
+                <LogoImage/>
               </Link>
-            </div>
-          </li>
-          {headerElements.map((element) => (
-            <li key={element.key} >
-              {element}
-            </li>
-          ))}
-        </ul>
+           </div>
+            <SearchBar />
+            <LocationButton/>
+            <AccountButton />
+            <CartButton />
+        </div>
       </div>
-      <HbLineImage className="w-full min-h-2 object-cover" />
+      <div className="h-5 w-5">
+      {/* <HbLineImage className="w-full min-h-2 object-cover" /> */}
+      </div>
       <Categories />
     </>
   );

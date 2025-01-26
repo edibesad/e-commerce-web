@@ -14,14 +14,14 @@ const items = [
 export default function TopLinks() {
   return (
     <nav className="text-[11px]">
-      <ul className="flex justify-end gap-[14px]">
+      <div className="flex justify-end gap-[14px]">
 
         {items.map((item) => (
-          <li>
+          <div>
             <Link className="text-nowrap" href="/">{item}</Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </nav>
   );
 }
