@@ -15,10 +15,11 @@ export default function TopLinks() {
   return (
     <nav className="text-[11px]">
       <div className="flex justify-end gap-[14px]">
-
-        {items.map((item) => (
-          <div>
-            <Link className="text-nowrap" href="/">{item}</Link>
+        {items.map((item, index) => (
+          <div key={index}>
+            <Link className="text-nowrap" href="/">
+              {item}
+            </Link>
           </div>
         ))}
       </div>
