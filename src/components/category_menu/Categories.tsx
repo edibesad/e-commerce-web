@@ -1,3 +1,4 @@
+import HBLineImage from "../images/HBLineImage";
 import CategoryItem from "./components/CategoryItem";
 
 export default function Categories() {
@@ -15,17 +16,18 @@ export default function Categories() {
 
   return (
     <div className="bg-[#f5f5f5] overflow-x-hidden">
+      <HBLineImage className="w-full h-5" />
 
-    <ul className="flex container justify-center mx-auto">
-      {items.map((item) => (
-        <li
-        className="place-content-center p-0 text-[#919191] hover:bg-white hover:text-[var(--primary)] cursor-pointer"
-        key={item.key}
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-</div>
+      <ul className="flex container justify-center mx-auto">
+        {items.map((item) => (
+          <li
+            className="place-content-center p-0 text-[#919191] hover:bg-white hover:text-[var(--primary)] cursor-pointer"
+            key={item.key}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
