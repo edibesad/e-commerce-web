@@ -7,7 +7,7 @@ interface CarouselImageProps {
 const CarouselImage: React.FC<CarouselImageProps> = ({ src }) => {
   return (
     <div
-      className="w-full flex-shrink-0 duration-700 ease-in-out"
+      className="w-full flex-shrink-0 duration-700 ease-in-out rounded-xl"
       data-carousel-item
     >
       <Image
