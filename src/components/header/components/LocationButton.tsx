@@ -1,17 +1,16 @@
-import LocationImage from "../../images/LocationImage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function LocationButton() {
   return (
-    <div className="flex w-44 h-18">
-      <div className="basis-2/12" />
-      <div className="h-16 basis-4/12 relative">
-        <LocationImage className="h-full w-full" />
-      </div>
-      <div className="basis-4/12 text-[#919191]">
-        <p className="flex items-center justify-start h-full">Konum</p>
-      </div>
-      <div className="basis-2/12" />
-      <div />
+    <div className="flex w-40 gap-2 items-center justify-center">
+      <FontAwesomeIcon
+        width={15}
+        height={15}
+        icon={faLocationDot}
+        color="#919191"
+      />
+      <span className="text-[#919191]">Konum</span>
     </div>
   );
 }

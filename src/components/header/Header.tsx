@@ -8,17 +8,17 @@ import LogoImage from "../images/LogoImage";
 import Categories from "../category_menu/Categories";
 export default function Header() {
   return (
-    <div className="relative">
-      <div className="xl:container mx-auto ">
+    <div className="relative overflow-hidden">
+      <div className="flex flex-col gap-3 px-64 mx-auto">
         <TopLinks />
-      </div>
-      <div className="container mx-auto relative">
-        <div className="flex items-center justify-evenly h-16 relative p-12">
-          <LogoImage className="basis-1/12" />
-          <SearchBar className="basis-1/3" />
-          <LocationButton />
-          <AccountButton />
-          <CartButton />
+        <div className="flex items-center justify-center relative pb-4">
+          <LogoImage className="basis-1/12 mr-14" />
+          <SearchBar className="basis-2/6" />
+          <div className="flex items-center justify-between gap-5 basis-1/12">
+            <LocationButton />
+            <AccountButton />
+            <CartButton />
+          </div>
         </div>
       </div>
       <Categories />

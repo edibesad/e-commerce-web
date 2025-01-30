@@ -8,7 +8,7 @@ export default function CategoryItem({
   name,
 }: CategoryItemProps) {
   return (
-    <div className="relative text-center leading-[0px] p-3 w-32">
+    <div className="relative text-center leading-[0px] p-3 w-32 text-[#646464]">
       {isFirst && (
         <div className="absolute left-0 top-1/2 h-8 border-l border-solid border-[#ddd] translate-y-[-50%]"></div>
       )}

@@ -13,16 +13,16 @@ const items = [
 
 export default function TopLinks() {
   return (
-    <nav className="text-[11px]">
+    <div className="text-[11px] pt-3 pr-24">
       <div className="flex justify-end gap-[14px]">
         {items.map((item, index) => (
           <div key={index}>
-            <Link className="text-nowrap" href="/">
+            <Link className="text-nowrap text-[#7B7B7B] font-bold" href="/">
               {item}
             </Link>
           </div>
         ))}
       </div>
-    </nav>
+    </div>
   );
 }

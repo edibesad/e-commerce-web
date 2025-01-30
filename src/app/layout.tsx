@@ -27,13 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body >
+      <body className="overflow-hidden">
         <Header />
         <div
-          className={`${geistSans.variable} ${geistMono.variable} antialiased md:container mx-auto`}
-          >
+          className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto px-24`}
+        >
           {children}
         </div>
       </body>
