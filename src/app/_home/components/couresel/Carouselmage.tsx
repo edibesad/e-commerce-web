@@ -6,24 +6,15 @@ interface CarouselImageProps {
 
 const CarouselImage: React.FC<CarouselImageProps> = ({ src }) => {
   return (
-    <div
-      className="w-full flex-shrink-0 duration-700 ease-in-out rounded-xl"
-      data-carousel-item
-    >
+    <div className="w-full h-full relative" data-carousel-item>
       <Image
         src={src}
-        width={400}
-        height={400}
-        className="w-full h-full object-cover"
+        fill
+        className="rounded-xl"
+        style={{ objectFit: "cover" }}
+        priority
         alt=""
       />
-
-      {/* <Image
-        layout="responsive"
-        src={src}
-        className=" absolute block w-full h-full object-fill"
-        alt="Image"
-      /> */}
     </div>
   );
 };

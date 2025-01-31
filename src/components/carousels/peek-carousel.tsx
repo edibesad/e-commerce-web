@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import BaseCarousel from "./carousel";
+import BaseCarousel from "./base-carousel";
 
 export const PeekCarousel = ({
   children,
@@ -8,7 +8,12 @@ export const PeekCarousel = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <BaseCarousel slideWidth="75%" showPeek={true} className={className}>
+  <BaseCarousel
+    slideWidth={60}
+    peekOffset={25}
+    className={className}
+    showArrowOnLimit={false}
+  >
     {children}
   </BaseCarousel>
 );

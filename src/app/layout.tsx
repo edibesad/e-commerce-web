@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className="overflow-hidden">
         <Header />
         <div
-          className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto px-24`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto px-36`}
         >
           {children}
         </div>

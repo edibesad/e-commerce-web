@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import BaseCarousel from "./carousel";
+import BaseCarousel from "./base-carousel";
 
 export const FullCarousel = ({
   children,
@@ -8,7 +8,7 @@ export const FullCarousel = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <BaseCarousel slideWidth="100%" showPeek={false} className={className}>
+  <BaseCarousel slideWidth={100} className={className} showArrowOnLimit={true}>
     {children}
   </BaseCarousel>
 );
