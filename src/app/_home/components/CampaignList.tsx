@@ -1,4 +1,4 @@
-import CampaignCard from "./CampaingCard";
+import CampaignCard from "./CampaignCard";
 
 export default function CampaignList() {
   return (

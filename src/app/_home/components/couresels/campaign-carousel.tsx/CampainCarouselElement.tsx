@@ -1,10 +1,12 @@
 import Image from "next/image";
 
-interface CarouselImageProps {
+interface CampaignCarouselElementProps {
   src: string;
 }
 
-const CarouselImage: React.FC<CarouselImageProps> = ({ src }) => {
+export default function CampaignCarouselElement({
+  src,
+}: CampaignCarouselElementProps) {
   return (
     <div className="w-full h-full relative" data-carousel-item>
       <Image
@@ -17,6 +19,4 @@ const CarouselImage: React.FC<CarouselImageProps> = ({ src }) => {
       />
     </div>
   );
-};
-
-export default CarouselImage;
+}

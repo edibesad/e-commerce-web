@@ -33,21 +33,28 @@ function BaseCarousel({
   };
 
   return (
-    <div className={`w-full h-full ${className}`}>
+    <div className={`relative w-full h-full ${className}`}>
       <div className="relative w-full h-full" data-carousel="slide">
         <div className={`relative w-full h-full overflow-hidden rounded-lg`}>
           <div
-            className="flex w-full h-full transition-transform duration-500"
+            className="absolute top-0 flex w-full h-full transition-transform duration-500"
             style={{
-              transform: `translateX(-${currentIndex * slideWidth}%)`,
-              width: `calc(100% + ${peekOffset}%)`,
-              marginLeft: `${peekOffset / 2}%`,
+              transform: `translateX(-${
+                currentIndex * slideWidth -
+                (currentIndex == 0 ||
+                currentIndex == childrenArray.length ||
+                peekOffset == 0
+                  ? 0
+                  : peekOffset + 5)
+              }%)`,
             }}
           >
             {React.Children.map(children, (child) => (
               <div
                 className="flex-shrink-0 h-full"
-                style={{ width: `${slideWidth}%` }}
+                style={{
+                  width: `${slideWidth}%`,
+                }}
               >
                 <div className="px-2 h-full">{child}</div>
               </div>

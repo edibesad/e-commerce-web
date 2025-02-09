@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import BaseCarousel from "./base-carousel";
+import BaseCarousel from "./BaseCarousel";
 
 export const FullCarousel = ({
   children,

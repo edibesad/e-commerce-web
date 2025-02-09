@@ -1,13 +1,19 @@
 import RatingStar from "./rating-star";
 
-export function RatingStars({ percentage }: { percentage: number }) {
+export function RatingStars({
+  percentage,
+  size = 10,
+}: {
+  percentage: number;
+  size?: number;
+}) {
   return (
-    <div className="flex w-fit h-full">
-      <RatingStar variant={getVariant(percentage, 1)} size={10} />
-      <RatingStar variant={getVariant(percentage, 2)} size={10} />
-      <RatingStar variant={getVariant(percentage, 3)} size={10} />
-      <RatingStar variant={getVariant(percentage, 4)} size={10} />
-      <RatingStar variant={getVariant(percentage, 5)} size={10} />
+    <div className="flex w-fit h-fit">
+      <RatingStar variant={getVariant(percentage, 1)} size={size} />
+      <RatingStar variant={getVariant(percentage, 2)} size={size} />
+      <RatingStar variant={getVariant(percentage, 3)} size={size} />
+      <RatingStar variant={getVariant(percentage, 4)} size={size} />
+      <RatingStar variant={getVariant(percentage, 5)} size={size} />
     </div>
   );
 }

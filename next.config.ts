@@ -6,7 +6,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "picsum.photos",
-        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "fakestoreapi.com",
       },
     ],
   },
