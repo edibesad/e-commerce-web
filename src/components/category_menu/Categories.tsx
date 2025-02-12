@@ -15,7 +15,7 @@ export default function Categories() {
   ];
 
   return (
-    <div className="bg-[#f5f5f5] overflow-x-hidden">
+    <div className="bg-[#f5f5f5] overflow-x-hidden md:block hidden">
       <HBLineImage className="w-full h-5" />
 
       <ul className="flex container justify-center mx-auto">

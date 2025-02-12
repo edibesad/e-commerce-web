@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components/ProductElement";
+import { ProductCard } from "@/components/ProductCard";
 import { Product } from "@/types/product";
 
 export function ProductForYouList({ products }: { products: Product[] }) {

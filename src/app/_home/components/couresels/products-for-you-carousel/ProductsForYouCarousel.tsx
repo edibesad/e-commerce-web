@@ -10,8 +10,9 @@ export function ProductForYouCarousel() {
   useEffect(() => {
     fetchProducts({ limit: 18 }).then((data) => {
       const result: Product[][] = [];
-      for (let i = 0; i < data.length; i += 6) {
-        result.push(data.slice(i, i + 6));
+      const itemsPerPage = window.innerWidth <= 768 ? 3 : 6;
+      for (let i = 0; i < data.length; i += itemsPerPage) {
+        result.push(data.slice(i, i + itemsPerPage));
       }
       setProducts(result);
     });

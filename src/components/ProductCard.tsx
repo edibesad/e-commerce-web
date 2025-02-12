@@ -7,7 +7,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="h-full border-[1px] border-solid border-[#e5e5e5] rounded-lg overflow-hidden hover:cursor-pointer hover:shadow-md group relative">
-      <button className="absolute right-4 top-4 z-10 w-10 h-10 rounded-full bg-[#E5E5E5] p-1 hover:bg-[#d6d6d6]">
+      <button className="absolute right-1 top-1 z-10 w-10 h-10 rounded-full bg-[#E5E5E5] p-1 hover:bg-[#d6d6d6]">
         <FontAwesomeIcon icon={faHeart} />
       </button>
       <div className="flex flex-col h-full w-full ">
@@ -31,9 +31,12 @@ export function ProductCard({ product }: { product: Product }) {
               {(Math.random() * 1000).toFixed(0)}
             </div>
           </div>
-          <div className="absolute bg-[var(--primary)] bottom-2 right-2 left-2 h-8 rounded-lg text-white flex text-center items-center justify-center group-hover:opacity-100 opacity-0">
+          <div className="hidden md:flex absolute bg-[var(--primary)] bottom-2 right-2 left-2 h-8 rounded-lg text-white text-center items-center justify-center group-hover:opacity-100 opacity-0">
             Sepete Ekle
           </div>
+          <button className="md:hidden absolute bottom-2 right-2 left-2 h-8 text-[#484848] border-[#cccc] border-2 rounded-lg text-xs font-semibold">
+            Sepete Ekle
+          </button>
         </div>
       </div>
     </div>

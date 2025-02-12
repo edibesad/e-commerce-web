@@ -13,7 +13,7 @@ const items = [
 
 export default function TopLinks() {
   return (
-    <div className="text-[11px] pt-3 pr-24">
+    <div className="text-[11px] pt-3 pr-24 md:block hidden">
       <div className="flex justify-end gap-[14px]">
         {items.map((item, index) => (
           <div key={index}>

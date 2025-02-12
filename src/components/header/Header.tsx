@@ -9,12 +9,12 @@ import Categories from "../category_menu/Categories";
 export default function Header() {
   return (
     <div className="relative overflow-hidden">
-      <div className="flex flex-col gap-3 px-64 mx-auto">
+      <div className="flex flex-col gap-3 md:px-64 px-2 mx-auto">
         <TopLinks />
-        <div className="flex items-center justify-center relative pb-4">
-          <LogoImage className="basis-1/12 mr-14" />
-          <SearchBar className="basis-2/6" />
-          <div className="flex items-center justify-between gap-5 basis-1/12">
+        <div className="flex md:flex-row md:items-center md:justify-center flex-col items-start relative pb-4">
+          <LogoImage className="md:basis-1/12 md:mr-14 md:w-full md:h-full w-32 h-11" />
+          <SearchBar className="md:basis-2/6" />
+          <div className="items-center justify-between gap-5 basis-1/12 md:flex hidden">
             <LocationButton />
             <AccountButton />
             <CartButton />

@@ -4,7 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function SearchBar({ className }: { className?: string }) {
   return (
-    <div className={className} style={{ width: "418px" }}>
+    <div className={`${className} md:w-[418px] w-full`}>
       <div className="relative">
         <div className="border border-[var(--primary)] rounded-lg flex items-center pl-4">
           <FontAwesomeIcon className="w-5 h-5 font-thin" icon={faSearch} />

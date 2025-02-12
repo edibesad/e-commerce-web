@@ -13,7 +13,7 @@ export function ProductCarousel() {
   }, []);
 
   return (
-    <div className="relative basis-1/3">
+    <div className="relative basis-1/3 md:block hidden">
       <div className="absolute w-full h-full -z-10">
         <Image
           fill
