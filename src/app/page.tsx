@@ -1,7 +1,7 @@
 "use client";
 
-import Home from "./_home/page";
+import HomePage from "./_home/page";
 
 export default function Index() {
-  return Home();
+  return HomePage.withLayout();
 }
