@@ -1,14 +1,14 @@
 "use client";
 
 import LogoImage from "@/components/images/LogoImage";
-import PresentationButton from "./components/PresentationButton";
 import { useState } from "react";
 import LoginComponents from "./components/LoginComponents";
-import RegisterComponents from "./components/LoginComponents";
+import RegisterComponents from "./components/RegisterComponents";
+import SectionButton from "@/components/buttons/SectionButton";
 
 export default function Page() {
-  const [isLogin, setIsLogin] = useState(false);
-
+  const [isLogin, setIsLogin] = useState(true);
+  console.log("isLogin", isLogin);
   return (
     <>
       <div className="relative flex w-full h-32 justify-center items-center">
@@ -16,9 +16,10 @@ export default function Page() {
       </div>
       <div className="flex h-[472px] w-full justify-center items-center">
         <div className="h-full md:w-[530px] w-full p-[72px]">
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center gap-4">
             <div className="flex w-full text-center text-sm">
-              <PresentationButton
+              <SectionButton
+                className="flex-grow"
                 text={"Giriş Yap"}
                 onClick={() => {
                   setIsLogin(true);
@@ -26,7 +27,8 @@ export default function Page() {
                 }}
                 enabled={isLogin}
               />
-              <PresentationButton
+              <SectionButton
+                className="flex-grow"
                 text={"Kayıt Ol"}
                 onClick={() => {
                   setIsLogin(false);

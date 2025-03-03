@@ -9,7 +9,12 @@ export function ProductCarousel() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetchProducts({ limit: 5 }).then((data) => setProducts(data));
+    fetchProducts({ limit: 5 }).then((data) => {
+      if (!data) {
+        return;
+      }
+      return setProducts(data);
+    });
   }, []);
 
   return (

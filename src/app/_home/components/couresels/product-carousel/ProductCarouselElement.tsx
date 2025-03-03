@@ -37,7 +37,7 @@ export default function ProductCarouselElement({
             </span>
           </div>
           <span className="text-[#484848] font-semibold text-sm mt-1">
-            ${product.price}
+            {product.price} TL
           </span>
 
           <div>

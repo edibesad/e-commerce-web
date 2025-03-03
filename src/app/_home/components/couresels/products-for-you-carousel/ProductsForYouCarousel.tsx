@@ -9,6 +9,9 @@ export function ProductForYouCarousel() {
 
   useEffect(() => {
     fetchProducts({ limit: 18 }).then((data) => {
+      if (!data) {
+        return;
+      }
       const result: Product[][] = [];
       const itemsPerPage = window.innerWidth <= 768 ? 3 : 6;
       for (let i = 0; i < data.length; i += itemsPerPage) {

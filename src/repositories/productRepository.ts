@@ -1,3 +1,5 @@
+"use server";
+
 import { fetcher } from "@/lib/api";
 import { Product } from "@/types/product";
 
@@ -9,40 +11,74 @@ interface FetchProductsParams {
 
 export const fetchProducts = async ({
   limit,
-}: FetchProductsParams = {}): Promise<Product[]> => {
-  const url = limit
-    ? `${API_URL}/products?limit=${limit}`
-    : `${API_URL}/products`;
+}: FetchProductsParams = {}): Promise<Product[] | null> => {
+  try {
+    const url = limit
+      ? `${API_URL}/products?limit=${limit}`
+      : `${API_URL}/products`;
 
-  const data = (await fetcher(url)) as Product[];
+    const data = await fetcher<Product[]>(url);
 
-  return data.map((product: Product) => ({
-    ...product,
-  }));
+    if (!data) {
+      return null;
+    }
+
+    return data.map((product: Product) => ({
+      ...product,
+    }));
+  } catch (error) {
+    console.log("error", error);
+    return null;
+  }
 };
 
-export const fetchProduct = async (id: number): Promise<Product> => {
-  const data = (await fetcher(`${API_URL}/products/${id}`)) as Product;
+export const fetchProduct = async (id: number): Promise<Product | null> => {
+  try {
+    const data = (await fetcher(`${API_URL}/products/${id}`)) as Product;
 
-  return {
-    ...data,
-  };
+    if (!data) {
+      return null;
+    }
+
+    return data;
+  } catch (error) {
+    console.log("error", error);
+    return null;
+  }
 };
 
-export const fetchCategories = async (): Promise<string[]> => {
-  const data = (await fetcher(`${API_URL}/products/categories`)) as string[];
+export const fetchCategories = async (): Promise<string[] | null> => {
+  try {
+    const data = (await fetcher(`${API_URL}/products/categories`)) as string[];
 
-  return data;
+    if (!data) {
+      return null;
+    }
+
+    return data;
+  } catch (error) {
+    console.log("error", error);
+    return null;
+  }
 };
 
 export const fetchProductsByCategory = async (
   category: string
-): Promise<Product[]> => {
-  const data = (await fetcher(
-    `${API_URL}/products/category/${category}`
-  )) as Product[];
+): Promise<Product[] | null> => {
+  try {
+    const data = (await fetcher(
+      `${API_URL}/products/category/${category}`
+    )) as Product[];
 
-  return data.map((product: Product) => ({
-    ...product,
-  }));
+    if (!data) {
+      return null;
+    }
+
+    const products = data.map((product: Product) => product);
+
+    return products;
+  } catch (error) {
+    console.log("error", error);
+    return null;
+  }
 };

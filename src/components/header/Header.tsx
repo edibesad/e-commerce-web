@@ -8,7 +8,7 @@ import LogoImage from "../images/LogoImage";
 import Categories from "../category_menu/Categories";
 export default function Header() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       <div className="flex flex-col gap-3 md:px-64 px-2 mx-auto">
         <TopLinks />
         <div className="flex md:flex-row md:items-center md:justify-center flex-col items-start relative pb-4">
