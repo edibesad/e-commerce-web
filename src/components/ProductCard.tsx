@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { createSlug } from "@/lib/helpers";
+import { addProductToCart } from "@/repositories/cartRepository";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
@@ -34,10 +35,16 @@ export function ProductCard({ product }: { product: Product }) {
                 {(Math.random() * 1000).toFixed(0)}
               </div>
             </div>
-            <div className="hidden md:flex absolute bg-[var(--primary)] hover:bg-[#bf4800] bottom-2 right-2 left-2 h-8 rounded-lg text-white text-center items-center justify-center group-hover:opacity-100 opacity-0">
+            <div
+              className="hidden md:flex absolute bg-[var(--primary)] hover:bg-[#bf4800] bottom-2 right-2 left-2 h-8 rounded-lg text-white text-center items-center justify-center group-hover:opacity-100 opacity-0"
+              onClick={() => addProductToCart(product)}
+            >
               Sepete Ekle
             </div>
-            <button className="md:hidden absolute bottom-2 right-2 left-2 h-8 text-[#484848] border-[#cccc] border-2 rounded-lg text-xs font-semibold">
+            <button
+              className="md:hidden absolute bottom-2 right-2 left-2 h-8 text-[#484848] border-[#cccc] border-2 rounded-lg text-xs font-semibold"
+              onClick={() => addProductToCart(product)}
+            >
               Sepete Ekle
             </button>
           </div>

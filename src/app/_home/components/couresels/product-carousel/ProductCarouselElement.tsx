@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { RatingStars } from "@/components/rating/rating-stars";
 import { Product } from "@/types/product";
+import { addProductToCart } from "@/repositories/cartRepository";
 
 export default function ProductCarouselElement({
   product,
@@ -41,7 +42,10 @@ export default function ProductCarouselElement({
           </span>
 
           <div>
-            <button className="text-[#484848] border-[#cccc] border-2 rounded-lg hover:text-[#cc4d00] text-sm font-semibold w-full py-1 mt-2">
+            <button
+              className="text-[#484848] border-[#cccc] border-2 rounded-lg hover:text-[#cc4d00] text-sm font-semibold w-full py-1 mt-2"
+              onClick={() => addProductToCart(product)}
+            >
               Sepete Ekle
             </button>
           </div>

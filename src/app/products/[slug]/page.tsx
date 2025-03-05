@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import ProductImageCarousel from "./components/product-image-carousel/ProductImageCarousel";
 import { RatingStars } from "@/components/rating/rating-stars";
 import SectionButton from "@/components/buttons/SectionButton";
+import { addProductToCart } from "@/repositories/cartRepository";
 
 export default async function ProductDetail({
   params,
@@ -62,7 +63,10 @@ export default async function ProductDetail({
             </span>
           </div>
           <div className="flex">
-            <button className="w-[416px] h-12 bg-[var(--primary)] text-white rounded-lg hover:bg-[#e35600] mt-4">
+            <button
+              className="w-[416px] h-12 bg-[var(--primary)] text-white rounded-lg hover:bg-[#e35600] mt-4"
+              onClick={() => addProductToCart(product)}
+            >
               Sepete Ekle
             </button>
           </div>

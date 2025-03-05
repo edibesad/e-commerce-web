@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { ChangeEventHandler, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 export default function PasswordInput(props: {
   placeholder: string;
   name: string;
-  onChange: (e: unknown) => void;
+  value?: string;
+  onChange: ChangeEventHandler<HTMLInputElement> | undefined;
   className?: string;
 }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +14,7 @@ export default function PasswordInput(props: {
   return (
     <div className="relative w-full">
       <input
+        value={props.value}
         type={showPassword ? "text" : "password"}
         className={`w-full h-14 p-3 pr-10 bg-[#eeeeee] rounded-lg focus:outline-2 outline-[var(--primary)] hover:bg-[#f5f5f5] ${props.className}`}
         placeholder={props.placeholder}
