@@ -2,7 +2,7 @@ import TopLinks from "./components/TopLinks";
 
 import LocationButton from "./components/LocationButton";
 import SearchBar from "./components/SearchBar";
-import AccountButton from "./components/AccountButton";
+import AccountButton from "./components/account_button/AccountButton";
 import CartButton from "./components/CartButton";
 import LogoImage from "../images/LogoImage";
 import Categories from "../category_menu/Categories";

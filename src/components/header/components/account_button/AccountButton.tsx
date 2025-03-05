@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Link from "next/link";
-import type { UrlObject } from "url";
-type Url = string | UrlObject;
+import { AccountMenuElement } from "./AccountMenuElement";
+import { AuthButtons } from "./AuthButtons";
 
 export default function AccountButton() {
   const [isMenuShown, setIsMenuShown] = useState(false);
@@ -58,25 +58,22 @@ export default function AccountButton() {
 
           <div className="flex flex-col gap-2 w-60 bg-white rounded-md z-50 relative py-3">
             <div className="flex flex-col gap-3 border-b border-solid border-[#e5e5e5] pb-3 px-8">
-              <MenuElement href={"/"} text="Giriş Yap" />
-              <MenuElement href={"/"} text="Kaydol" />
+              <AuthButtons />
             </div>
             <div className="flex flex-col gap-1 px-8">
-              <MenuElement href={"/"} text="Beğendiklerim" />
-              <MenuElement href={"/"} text="...." />
-              <MenuElement href={"/"} text="...." />
-              <MenuElement href={"/"} text="...." />
+              <AccountMenuElement>
+                <Link href={"/"}>...</Link>
+              </AccountMenuElement>
+              <AccountMenuElement>
+                <Link href={"/"}>...</Link>
+              </AccountMenuElement>
+              <AccountMenuElement>
+                <Link href={"/"}>...</Link>
+              </AccountMenuElement>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-function MenuElement({ text, href }: { text: string; href: Url }) {
-  return (
-    <div className="flex items-center justify-start pl-2 gap-1 hover:text-[#919191] text-[#484848] text-sm font-bold">
-      <Link href={href}>{text}</Link>
     </div>
   );
 }

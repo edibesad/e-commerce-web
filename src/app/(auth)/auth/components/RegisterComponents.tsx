@@ -25,7 +25,7 @@ export default function RegisterComponents() {
         className="mb-4"
       />
       <button
-        value="Giriş Yap"
+        value="Kayıt ol"
         className="w-full h-14 bg-[var(--primary)] text-white rounded-lg hover:bg-[#e35600] cursor-pointer"
       />
     </div>
